@@ -1,0 +1,83 @@
+Sample Program:
+---------------------
+
+package example;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class MeatLife 
+{
+	@BeforeMethod
+	public void Chicken()
+	{
+	 
+		System.out.println(" ....Get me some chicken...");
+		
+	}
+	@Test(priority=2)
+	public void Mutton()
+	{
+		
+		System.out.println(" ....Get me some Mutton...");
+		
+	}
+	@Test(priority=3)
+	public void Market()
+	{
+		
+		System.out.println(" ....Hell of meat market...");
+		
+	}
+	@AfterMethod
+	public void Bargain()
+	{
+		
+		System.out.println(" ...Never hesitate to bargain....");
+		
+	}
+}
+
+
+Sample 2:
+-----------
+
+package example;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class Mass 
+{
+	@Test(dataProvider="My Values")
+	public void MixedCal(String x,String y)
+	{
+		int z=Integer.parseInt(x)*Integer.parseInt(y);
+		System.out.println("The Mixed Calculus value"+z);
+		
+	}
+	@DataProvider(name="My Values")
+	public String[][] Values()
+	{
+		int a=5;
+		int b=10;
+		int c=15;
+		int d=20;
+		// Store all values in the String Array
+		
+		String[][] s=new String[2][2];
+		
+		s[0][0]=Integer.toString(a);
+		
+		s[0][1]=Integer.toString(b);
+		
+		s[1][0]=Integer.toString(c);
+		
+		s[1][1]=Integer.toString(d);
+		
+		return s;
+		
+	}
+
+}

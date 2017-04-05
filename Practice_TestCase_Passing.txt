@@ -1,0 +1,261 @@
+Practice Material:
+--------------------
+
+Test Case Automation Framework:
+----------------------------------------
+
+package example;
+
+import org.testng.annotations.Test;
+
+public class Class 
+{
+	@Test(priority=1)
+	public void EnterHotel()
+	{
+		
+		System.out.println(" .........Enter in to the perfect Hotel........");
+		
+	}
+	@Test(priority=2)
+	public void MenuCheck()
+	{
+		
+		System.out.println(" .........Check for the perfect menu........");
+		
+	}
+	@Test(priority=3)
+	public void OrderMenu()
+	{
+		
+		System.out.println(" .........Order the food........");
+		
+	}
+	@Test(priority=4)
+	public void CheckOut()
+	{
+		
+		System.out.println(" .........Leave the hotel with a smile........");
+		
+	}
+
+}
+
+Output:
+--------
+
+.........Enter in to the perfect Hotel........
+ .........Check for the perfect menu........
+ .........Order the food........
+ .........Leave the hotel with a smile........
+PASSED: EnterHotel
+PASSED: MenuCheck
+PASSED: OrderMenu
+PASSED: CheckOut
+
+Example 2:
+-------------
+
+package example;
+
+import org.testng.annotations.Test;
+
+public class Class 
+{
+	@Test(priority=1)
+	public void EnterHotel()
+	{
+		
+		System.out.println(" .........Enter in to the perfect Hotel........");
+		
+	}
+	@Test(enabled=false)
+	public void MenuCheck()
+	{
+		
+		System.out.println(" .........Check for the perfect menu........");
+		
+	}
+	@Test(priority=3)
+	public void OrderMenu()
+	{
+		
+		System.out.println(" .........Order the food........");
+		
+	}
+	@Test(priority=4)
+	public void CheckOut()
+	{
+		
+		System.out.println(" .........Leave the hotel with a smile........");
+		
+	}
+
+}
+
+
+Output:
+--------
+
+ .........Enter in to the perfect Hotel........
+ .........Order the food........
+ .........Leave the hotel with a smile........
+PASSED: EnterHotel
+PASSED: OrderMenu
+PASSED: CheckOut
+
+Example 3:
+-------------
+
+package example;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Class 
+{
+	@BeforeMethod
+	public void EnterHotel()
+	{
+		
+		System.out.println(" .........Enter in to the perfect Hotel........");
+		
+	}
+	@Test(enabled=false)
+	public void MenuCheck()
+	{
+		
+		System.out.println(" .........Check for the perfect menu........");
+		
+	}
+	@Test(priority=3)
+	public void OrderMenu()
+	{
+		
+		System.out.println(" .........Order the food........");
+		
+	}
+	@AfterMethod
+	public void CheckOut()
+	{
+		
+		System.out.println(" .........Leave the hotel with a smile........");
+		
+	}
+
+}
+
+Output:
+--------
+
+.........Enter in to the perfect Hotel........
+ .........Order the food........
+ .........Leave the hotel with a smile........
+PASSED: OrderMenu
+
+Example 4:
+-------------
+
+package example;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Class 
+{
+	@BeforeMethod
+	public void EnterHotel()
+	{
+		
+		System.out.println(" .........Enter in to the perfect Hotel........");
+		
+	}
+	@Test(priority=1)
+	public void MenuCheck()
+	{
+		
+		System.out.println(" .........Check for the perfect menu........");
+		
+	}
+	@Test(priority=2)
+	public void OrderMenu()
+	{
+		
+		System.out.println(" .........Order the food........");
+		
+	}
+	@AfterMethod
+	public void CheckOut()
+	{
+		
+		System.out.println(" .........Leave the hotel with a smile........");
+		
+	}
+
+}
+
+Output:
+--------
+
+.........Enter in to the perfect Hotel........
+ .........Check for the perfect menu........
+ .........Leave the hotel with a smile........
+ .........Enter in to the perfect Hotel........
+ .........Order the food........
+ .........Leave the hotel with a smile........
+PASSED: MenuCheck
+PASSED: OrderMenu
+
+Passing values from one TestCase to Other TestCase:
+--------------------------------------------------------------
+
+Example:
+-----------
+package example;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class Mass 
+{
+	@Test(dataProvider="My Values")
+	public void MixedCal(String x,String y)
+	{
+		int z=Integer.parseInt(x)*Integer.parseInt(y);
+		System.out.println("The Mixed Calculus value"+z);
+		
+	}
+	@DataProvider(name="My Values")
+	public String[][] Values()
+	{
+		int a=5;
+		int b=10;
+		int c=15;
+		int d=20;
+		// Store all values in the String Array
+		
+		String[][] s=new String[2][2];
+		s[0][0]=Integer.toString(a);
+		
+		s[0][1]=Integer.toString(b);
+		
+		s[1][0]=Integer.toString(c);
+		
+		s[1][1]=Integer.toString(d);
+		
+		return s;
+		
+	}
+
+}
+
+
+Output:
+--------
+The Mixed Calculus value50
+The Mixed Calculus value300
+PASSED: MixedCal("5", "10")
+PASSED: MixedCal("15", "20")
+

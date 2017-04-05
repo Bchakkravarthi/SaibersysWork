@@ -1,0 +1,146 @@
+Ashok C Bitra
+Mahesh Babu: Tutor
+						            "Selenium QA Testing"	
+							SYBERSYS	
+
+Assignment: POM (Page Object Models) 
+
+							Complete Task:
+							------------------
+
+
+package sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class NewTour 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		//open the browser
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		// enter the desired URL
+		f.get("http://newtours.demoaut.com/");
+		Thread.sleep(5000);
+		//user id 
+		f.findElement(By.name("userName")).sendKeys("bitra9999");
+		Thread.sleep(5000);
+		// password
+		f.findElement(By.name("password")).sendKeys("66677888");
+		Thread.sleep(5000);
+		// sign in
+		f.findElement(By.name("login")).click();
+		Thread.sleep(5000);
+		//select one-way
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/b/font/input[2]")).click();
+		Thread.sleep(5000);
+		//select round-trip
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/b/font/input[1]")).click();
+		Thread.sleep(5000);
+		//city of leaving
+		Select d=new Select(f.findElement(By.name("fromPort")));
+		d.selectByValue("Frankfurt");
+		Thread.sleep(5000);
+		// enter month
+		Select d1=new Select(f.findElement(By.name("fromMonth")));
+		d1.selectByValue("5");
+		Thread.sleep(5000);
+		// date
+		Select d2=new Select(f.findElement(By.name("fromDay")));
+		d2.selectByValue("5");
+		Thread.sleep(5000);
+		// destination
+		Select d3=new Select(f.findElement(By.name("toPort")));
+		d3.selectByValue("Paris");
+		Thread.sleep(5000);
+		//month
+		Select d4=new Select(f.findElement(By.name("toMonth")));
+		d4.selectByValue("6");
+		Thread.sleep(5000);
+		//date
+		Select d5=new Select(f.findElement(By.name("toDay")));
+		d5.selectByValue("6");
+		Thread.sleep(5000);
+		// type of class
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[9]/td[2]/font/font/input[1]")).click();
+		Thread.sleep(5000);
+		// airlines
+		Select d6=new Select(f.findElement(By.name("airline")));
+		d6.selectByVisibleText("Unified Airlines");
+		Thread.sleep(5000);
+		// click on continue
+		f.findElement(By.name("findFlights")).click();
+		Thread.sleep(5000);
+		//select airlines for departure
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table[1]/tbody/tr[5]/td[1]/input")).click();
+		Thread.sleep(5000);
+		// select airlines for return
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table[2]/tbody/tr[7]/td[1]/input")).click();
+		Thread.sleep(5000);
+		//click on continue
+		f.findElement(By.name("reserveFlights")).click();
+		Thread.sleep(5000);
+		//first name
+		f.findElement(By.name("passFirst0")).sendKeys("ashok");
+		Thread.sleep(5000);
+		// last name
+		f.findElement(By.name("passLast0")).sendKeys("bitra");
+		Thread.sleep(5000);
+		// select type of meal
+		Select d7=new Select(f.findElement(By.name("pass.0.meal")));
+		d7.selectByValue("HNML");
+		Thread.sleep(5000);
+		// select credit card
+		Select d8=new Select(f.findElement(By.name("creditCard")));
+		d8.selectByValue("DC");
+		Thread.sleep(5000);
+		// credit card details
+		f.findElement(By.name("creditnumber")).sendKeys("2345123498760982");
+		Thread.sleep(5000);
+		// expiration details of credit card month and year
+		Select d9=new Select(f.findElement(By.name("cc_exp_dt_mn")));
+		d9.selectByIndex(5);
+		Thread.sleep(5000);
+		Select e=new Select(f.findElement(By.name("cc_exp_dt_yr")));
+		e.selectByValue("2010");
+		Thread.sleep(5000);
+		// enter the name that appears on the card
+		f.findElement(By.name("cc_frst_name")).sendKeys("ashok");
+		Thread.sleep(5000);
+		f.findElement(By.name("cc_last_name")).sendKeys("bitra");
+		Thread.sleep(5000);
+		// Choosing ticket-less travel
+		f.findElement(By.name("ticketLess")).click();
+		Thread.sleep(5000);
+		// billing address
+		f.findElement(By.name("billAddress1")).sendKeys(" 1029 s lincoln st");
+		Thread.sleep(5000);
+		f.findElement(By.name("billCity")).sendKeys("kent");
+		Thread.sleep(5000);
+		f.findElement(By.name("billState")).sendKeys("OH");
+		Thread.sleep(5000);
+		f.findElement(By.name("delZip")).sendKeys("44240");
+		Thread.sleep(5000);
+		Select q=new Select(f.findElement(By.name("billCountry")));
+		q.selectByValue("215");
+		Thread.sleep(5000);
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td[2]/font")).click();
+		Thread.sleep(5000);
+		// secure payment
+		//f.findElement(By.name("buyFlights")).click();
+		//Thread.sleep(5000);
+		// click sign-off button
+		f.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[1]/a")).click();
+		Thread.sleep(5000);
+		// closing the web-browser
+		f.close();
+		
+		
+	}
+
+}

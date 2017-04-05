@@ -1,0 +1,352 @@
+Ashok C Bitra						Selenium QA(Quality Assurance) Testing
+							------------------------------------------------
+
+Standard_Concepts:
+-----------------------
+Selenium is Open Source.
+
+QTP:
+------
+	1: QTP is a commercial tool.
+
+	2: QTP can be used for testing client server application and web based applications.
+
+	3: QTP is limited to Internet Explorer on Windows.
+
+	4: QTP supports only VB script.
+
+Quality Center:
+-----------------
+	Quality Center was initially a test management tool developed by Mercury interactive.
+
+	It is now developed by HP as Application Life Cycle Management Tool (or) ALM that supports various phases of the software development life cycle.
+
+Selenium:
+-----------
+Selenium basically a set of tools for automated web testing and mainly it consists of following:
+
+	1: Selenium IDE (Integrated Development Environment) : 
+	    
+		It is a tool for recording and playing back.  It is a firefox plugin
+
+	2: WebDriver and RC(Remote Control):
+
+		a: It provide the APIs for a variety of languages like Java, .NET, PHP, etc.
+
+		b: Both Selenium Grid and RC is known as Selenium 2.0
+
+	3: Grid:
+	
+	With the help of Grid you can distribute tests on multiple machines.
+
+	Advantage: Time save.
+
+Assertion:
+-----------
+
+	Assertion is used as a  verification point. It verifies that the state of the application reaches to that task that it has to be fullfilled or not. 
+	The types of assertion are 
+		a: assert 
+		b: verify
+		c: waifFor	
+		
+LoadRunner:
+---------------
+
+	LoadRunner is a Performance Testing tool which was pioneered by Mercury in 1999. Loadrunner was later acquired by HP in 2009.
+
+	LoadRunner supports various development tools, technologies and communication protocols. 
+	
+	In fact this is the only tool in market which supports such large number of protocols to conduct performance testing.
+
+JUnit / TestNg:
+-----------------
+
+	1: So far we had been doing Selenium tests without generating a proper format for the test results. 
+	
+	2: By using the TestNG we can maintain  how to make these reports using a test framework called TestNG.
+
+	3: TestNG is a testing framework that overcomes the limitations of another popular testing framework called JUnit. 
+
+	4: The "NG" means "Next Generation". Most Selenium users use this more than JUnit because of its advantages. 
+	
+	Advantages of TestNG over JUnit
+
+       	 	a: Annotations are easier to understand
+        		b: Test cases can be grouped more easily
+		c: Parallel testing is possible
+
+Visual Studio:
+----------------
+
+	Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft. 
+	
+	It is used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services.
+
+	Running Automated Tests in Visual Studio: Visual Studio provides different ways to run tests 
+
+		a: Run Tests From Test Explorer. 
+		b: Run load tests from the load test editor. 
+		c: Run Tests From Your Source Code Files. 
+		d: Run Tests From Files in Your Test Code Files.
+
+
+Java/ CSS/ HTML 5/ JSP/ Servlets/ SQL :
+-------------------------------------------------
+
+SQL:
+------
+	SQL stands for Structured Query Language. SQL is used for accessing and manipulating database systems. SQL statements are used to retrieve and update data in a database.
+
+	Major keywords are SELECT, UPDATE, DELETE, INSERT, WHERE and so on.
+
+	We write SQL queries using some these tools: Todd, Squirrel and Rapid SQL.
+
+Servlets:
+---------
+
+	A Java servlet is a Java program that extends the capabilities of a server. 
+	Although servlets can respond to any types of requests, they most commonly implement applications hosted on Web servers.
+
+Jsp:
+----
+
+	JavaServer Pages (JSP) is a technology that helps software developers create dynamically generated web pages based on HTML, XML.
+
+HTML5:
+---------
+
+	HTML5 is a markup language used for structuring and presenting content on the World Wide Web. 
+
+CSS:
+-----
+
+	1: CSS stands for Cascading Style Sheets.
+
+	2: CSS describes how HTML elements are to be displayed on screen, paper, or in other media.
+
+	3: CSS saves a lot of work. It can control the layout of multiple web pages all at once.
+
+
+Test Plan:
+-----------
+	A Test Plan is a document describing the scope, approach, resources, and schedule of intended testing activities.
+	
+	It include: 
+		Heading, Revision History, Table of Contents, Introduction, Scope, Approach, Overview, different types of testing that will be carried out, what software and hardware will be 				required, issues, risks, assumptions and sign off section.
+
+Test Case:
+-----------
+
+	A Test Case is a document that describes step by step process how to test the application. 
+	
+	A Test Case includes Test Case ID, Steps Description, Expected Output, Actual Output, Pass/Fail, Remarks.
+
+Software Lifecycle:
+----------------------
+
+ 	1. Requirement phase
+	2.  Design phase
+	3.  Coding (programming)
+	4.  Testing
+	5.  Release (Production)
+	6.  Maintenance (Support) 
+
+Test Scripts:
+--------------
+
+	1: Test scripts are used in automated testing. 
+
+	2: Sometimes, a set of instructions used in manual testing, is also called a Test Script but a better term for that would be a Test Case. 
+
+	3: Test Scenario means " What to be tested" and test case means " How to be tested".
+
+SDLC / STLC :
+------------------
+
+		SDLC - Software Development Life cycle				STLC - Software Test Life Cycle
+		------------------------------------------------				--------------------------------------
+		
+		1) Initiation of the Project 					1) Preparation of the test strategy 
+		2) Collection of Requirements and Documentation 			2) Preparation of the test plan 
+		3) Designing 						3) Creation of the test environment 							
+		4) Coding and unit testing 					4) Writing of the test cases 
+		5) Integration testing 						5) Creation of the test scripts 
+		6) System testing 						6) Execution of the test scripts 
+		7) Installation and acceptance testing 				7) Analysis of the test results 
+		8) Support or maintenance 					8) Reporting of the bugs 			
+									9) Performing
+
+Mercury Quality Center:
+----------------------------
+
+	1: Mercury Quality Centre is a web-based test management tool. 
+	
+	2: It gives you a centralized control over the entire testing life cycle. 
+
+	3: It gives an easy interface to manage and organize activities like Requirements coverage, Test Case Management, Test Execution Reporting, Defect Management, and Test Automation. 
+
+	4: All these activities are provided from a single tool, which is web-based and can be accessed from any where, which makes the task of the testers and managers easy.
+
+JIRA:
+------
+
+	1: JIRA is a tool used for bug tracking, issue tracking, and project management. 
+	
+	2: The name "JIRA" is actually inherited from the Japanese word "Gojira" which means "Godzilla". 
+
+	3: The basic use of this tool is to track issues, and bugs related to your software and mobile apps.
+
+UAT (User Acceptance Testing):
+------------------------------------
+
+	1: User acceptance testing is a testing methodology where the clients/end users involved in testing the product in order to validate the product against their requirements. 
+
+	2: It is performed at client location at developer's site.
+
+API Testing:
+-------------
+
+	1: API TESTING is a type of software testing that involves testing application programming interfaces (APIs) directly and as part of integration testing to determine if they meet 	expectations for functionality, reliability, performance, and security.
+
+Agile (Scrum):
+----------------
+
+	1: In Scrum the tasks are divided into small time frames to deliver specific features in the release so that the working software build can be delivered after each iteration. 
+
+	2: Builds are incremental in terms of features; the final build has all the features required by the customer. 
+
+Iterative Methodology:
+--------------------------
+
+	1: Iterative development is a way of breaking down the software development of a large application into smaller chunks. 
+	
+	2: In iterative development, feature code is designed, developed and tested in repeated cycles.
+
+GUI / Database Testing:
+----------------------------
+
+	The GUI  in most cases given the most emphasis by the respective test managers as well as the development team members since the "Graphical User Interface" happens to be the most 	visible part of the application. 
+	However it is also important to validate the information that can be considered as the heart of the application aka DATABASE.
+
+Example: 
+	Let us consider a Banking application whereby a user makes transactions. Now from database testing viewpoint following things are important:
+	1: The application stores the transaction information in the application database and displays them correctly to the user.
+	2: No information is lost in the process.
+	3: No partially performed or aborted operation information is saved by the application.
+	4: No unauthorized individual is allowed to access the users information.
+
+Methodologies of Functional Testing:
+-------------------------------------------
+
+	We have three types of testing methodologies
+
+		a) Black Box Testing : It is used Independent Testers
+
+		b) White Box Testing : It is Used for Developers
+
+		c) Grey Box Testing : It is Used Testers
+
+
+Levels Of Testing:
+--------------------
+
+	1) Unit Level Testing:
+
+		-> It is used by the Developers, so we using white box testing methodlogie
+
+
+	2) Module Level Testing
+
+		-> It is used by the independente testing, so we are using block box testing.
+
+
+	3) Integration Level Testing 
+
+		-> All Modules are combined and once again testing is done.
+
+			a) Top - Down 
+
+			b) Bottom - Up
+
+			c) Hybrid 
+
+			d) Big Bang
+
+	4) System Level Testing 
+
+		-> In This one we are check whether project working properly or not.
+
+
+	5) Acceptance Testing
+
+		->  It is checked by the customer.
+
+Water Fall Model:
+--------------------
+
+	-> The Waterfall Model was first Process Model to be introduced.
+
+	-> this is linear-sequential life cycle model
+
+	->  In waterfall model each phase must be completed before the next phase can begin and there is no overlapping in the phases.
+
+
+	a) Requirement Gathering and analysis.
+
+	b) System Design.
+
+	c) Implementation.
+
+	d) Testing.
+
+	e) Deployment.
+
+	f) Maintenance.
+
+Iterative Model:
+------------------
+
+	-> iterative process starts with a simple implementation of a small set of the software requirements and iteratively enhances the evolving versions until the complete system is implemented 	and ready to be deployed.
+
+	-> Requirments
+
+	-> Build 1...n
+
+		a) Desing.
+
+		b) Development.
+
+		c) Testing.	
+	-> Deploment.
+
+	-> Maintaince.
+
+Spiral Model:
+----------------
+
+	-> The spiral model combines the idea of iterative development with the systematic, controlled aspects of the waterfall model.
+
+	-> Spiral model is a combination of iterative development process model and sequential linear development model    i.e. waterfall model with very high emphasis on risk analysis.
+
+	a) Identification.
+
+	b) Design.
+
+	c) Construct or Build.
+
+	d) Evaluation and Risk Analysis.
+
+Build:
+-------
+	Developers put their code in the shared folder and all those code are combined together so that it is a complete application that works which is known as build.
+
+Backend Testing:
+-------------------
+
+	It is a test to check whether the data displayed in the GUI front end report format matches with the particular data in the original database.
+ 
+BUG:
+------
+
+	A bug is an error, flaw, mistake, failure, or fault in a computer code (program) that prevents it from behaving as intended (e.g., producing an incorrect result). 

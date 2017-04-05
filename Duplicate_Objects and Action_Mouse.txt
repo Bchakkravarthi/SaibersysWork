@@ -1,0 +1,90 @@
+Ashok C Bitra						Selenium QA Testing
+Mahesh : Tutor						      SYBERSYS
+Sample program on Duplicate_Objects and Mouse_Actions:
+-----------------------------------------------------------------------
+
+Consider a situation where during the registration of an site there may be a Multiple Text Fields with same name and we need to fill the value into those text fields based on thier order by thier values and indexes.
+
+Sample program:
+--------------------
+
+duplicate_objects: In order to eradicate the duplicate values these is procedure that we need to follow.
+
+		// we need to use List and another importtant point is " we have to use "findElements()" since we are having same fields more than once.
+		List<WebElement> obj=f.findElements(By.id("password"));
+			// passing value into the text field by using "get(<we need to specify the value of index eg: starting from 0>)" 
+			obj.get(0).sendKeys("12345");
+			obj.get(1).sendKeys("45677899");
+
+
+package sample;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class DuplicateObjects 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://www.google.com");
+		Thread.sleep(5000);
+		f.navigate().to("http://www.infibeam.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("loginlink")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("new-account-btn")).click();
+		Thread.sleep(5000);
+		List<WebElement> obj=f.findElements(By.id("password"));
+		obj.get(0).sendKeys("12345");
+		Thread.sleep(5000);
+		obj.get(1).sendKeys("45677899");
+		Thread.sleep(5000);
+		f.close();
+		
+	}
+
+}
+
+
+Action_mouse: These type of cases we can mostly observe in most of the day-to-day websites where we can generally observe the animations whenever we move the mouse over an web element.
+
+Sample program:
+--------------------
+
+package sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ActionMouse 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://www.google.com");
+		Thread.sleep(5000);
+		f.navigate().to("http://store.demoqa.com/");
+		Thread.sleep(5000);
+		WebElement obj=f.findElement(By.xpath(".//*[@id='menu-item-33']/a"));
+		Actions a=new Actions(f);
+		a.moveToElement(obj).build().perform();
+		f.findElement(By.xpath(".//*[@id='menu-item-39']/a")).click();
+		Thread.sleep(5000);
+		f.close();
+	}
+
+}
+
+

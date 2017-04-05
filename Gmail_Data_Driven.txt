@@ -1,0 +1,94 @@
+Ashok C Bitra
+-----------------
+
+Data_Driven_Automation_Framework:
+-----------------------------------------------
+
+package automation;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
+public class GmailTest 
+{
+	@Test(dataProvider="Content")
+	public void Login(String mail,String pass) throws InterruptedException
+	{
+		
+		WebDriver d=new FirefoxDriver();
+		Thread.sleep(5000);
+		d.get("http://www.google.com");
+		Thread.sleep(5000);
+		d.findElement(By.id("gb_70")).click();
+		Thread.sleep(5000);
+		d.findElement(By.id("Email")).sendKeys(mail);
+		Thread.sleep(5000);
+		d.findElement(By.id("next")).click();
+		Thread.sleep(5000);
+		d.findElement(By.id("Passwd")).sendKeys(pass);
+		Thread.sleep(5000);
+		d.findElement(By.id("signIn")).click();
+		Thread.sleep(5000);
+		d.findElement(By.linkText("Gmail")).click();
+		Thread.sleep(5000);
+		d.findElement(By.xpath(".//*[@id='gb']/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")).click();
+		Thread.sleep(5000);
+		d.findElement(By.id("gb_71")).click();
+		System.out.println(".....Gmail_Login_Logout_Test.....");
+		String title=d.getTitle();
+		System.out.println(".....Title of the Page is...."+title);
+		d.close();
+		
+	}
+	@DataProvider(name="Content")
+	public String[][] ExcelData() throws BiffException, IOException
+	{
+		File f=new File("D:\\GmailLogin.xls");
+		Workbook wb=Workbook.getWorkbook(f);
+		Sheet s=wb.getSheet(0);
+		int row=s.getRows();
+		int col=s.getColumns();
+		String data[][]=new String[row][col];
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				
+				Cell values=s.getCell(j,i);
+				data[i][j]=values.getContents();
+			}
+		}
+		return data;
+		
+	}
+	
+	
+
+}
+
+
+Output:
+--------
+
+.....Gmail_Login_Logout_Test.....
+.....Title of the Page is....Gmail
+.....Gmail_Login_Logout_Test.....
+.....Title of the Page is....Gmail
+PASSED: Login("bitra9999@gmail.com", "887755")
+PASSED: Login("sumithsunny5@gmail.com", "88886667")
+
+===============================================
+    Default test
+    Tests run: 2, Failures: 0, Skips: 0
+===============================================

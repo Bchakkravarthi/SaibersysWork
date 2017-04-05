@@ -1,0 +1,148 @@
+Arrays in Java:
+--------------------
+An Array variable generally stores the number of values of same DATA TYPE in an single memory location.
+
+There are generally two types of arrays in general, they are 
+1: Single Dimensional Array: stores values in an single row.
+	syntax: int[] a=new int[5];
+Example 1:
+package test;
+
+public class Sample 
+{
+
+	public static void main(String[] args) 
+	{
+		int[] a=new int[5];
+		a[0]=11;
+		a[1]=22;
+		a[2]=33;
+		a[3]=44;
+		a[4]=55;
+		
+		System.out.println(a[0]);
+		System.out.println(a[1]);
+		System.out.println(a[2]);
+		System.out.println(a[3]);
+		System.out.println(a[4]);
+		
+		
+
+	}
+
+}
+
+Example 2:
+
+Another way of printing the data by reducing the lines of code by using the "loops".
+package sample;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Single 
+{
+
+	public static void main(String[] args) throws NumberFormatException, IOException 
+	{
+		int[] a=new int[3];
+		InputStreamReader ir=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(ir);
+		System.out.println("enter the "+a.length+" values");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=Integer.parseInt(br.readLine());
+			
+		}
+		System.out.println("the array values are "+a.length+" ");
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.println(a[i]);
+		}
+		
+	}
+	
+
+}
+
+
+
+2: Double/Multi Dimensional Array: stores values in rows and columns.
+	syntax: int[][] a=new int[2][3];
+
+Example:
+
+package sample;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Single 
+{
+
+	public static void main(String[] args) throws NumberFormatException, IOException 
+	{
+		int[][] a=new int[2][2];
+		InputStreamReader ir=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(ir);
+		System.out.println("enter the "+a.length+" values");
+		for(int i=0;i<2;i++)
+			{
+				for(int j=0;j<2;j++)
+				{
+					a[i][j]=Integer.parseInt(br.readLine());
+				}
+			}
+		
+		
+		System.out.println("the array values are "+a.length+" ");
+		for(int i=0;i<2;i++)
+			{
+				for(int j=0;j<2;j++)
+				{
+					System.out.println("a["+i+"]["+j+"]= "+a[i][j]);
+				}
+			}
+		
+		
+	}
+	
+
+}
+
+Usage of arrays in functions where we can able to return two values at same time:
+------------------------------------------------------------------------------------------------------------
+
+package sample;
+
+public class Example1 
+{
+
+	public double[] area(double r,double l,double h)
+	{
+		double ac=3.14*r*r;
+		double ar=l*h;
+		double[] d=new double[2];
+		d[0]=ac;
+		d[1]=ar;
+		return d;
+		
+			
+	}
+	public static void main(String[] args) 
+	{
+		
+		Example1 x=new Example1();
+		double[] r=x.area(5, 2.2, 3.3);
+		System.out.print("the area of circle"+r[0]);
+		System.out.print("the area of circle"+r[1]);
+		
+	}
+
+}
+
+
+
+

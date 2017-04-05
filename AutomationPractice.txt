@@ -1,0 +1,99 @@
+Sample practice for creating the account in " AUTOMATION PRACTICE" :
+-------------------------------------------------------------------------------------------
+
+package sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class DemoPractice 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://automationpractice.com");
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='header']/div[2]/div/div/nav/div[1]/a")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("email_create")).sendKeys("bitra.ashok@gmail.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("SubmitCreate")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("id_gender1")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("customer_firstname")).sendKeys("Ashok Chakravarthy");
+		Thread.sleep(5000);
+		f.findElement(By.id("customer_lastname")).sendKeys("Bitra");
+		Thread.sleep(5000);
+		f.findElement(By.id("passwd")).sendKeys("AShokoct01");
+		Thread.sleep(5000);
+		Select d=new Select(f.findElement(By.id("days")));
+		d.selectByValue("1");
+		Thread.sleep(5000);
+		Select d1=new Select(f.findElement(By.id("months")));
+		d1.selectByValue("10");
+		Thread.sleep(5000);
+		Select d2=new Select(f.findElement(By.id("years")));
+		d2.selectByValue("1990");
+		Thread.sleep(5000);
+		f.findElement(By.id("optin")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("company")).sendKeys("HALL OF FAME BITRA PRODUCTIONS");
+		Thread.sleep(5000);
+		f.findElement(By.id("address1")).sendKeys("1029 S Lincoln St");
+		Thread.sleep(5000);
+		f.findElement(By.id("city")).sendKeys("Kent");
+		Thread.sleep(5000);
+		Select s=new Select(f.findElement(By.id("id_state")));
+		s.selectByValue("35");
+		Thread.sleep(5000);
+		f.findElement(By.id("postcode")).sendKeys("44240");
+		Thread.sleep(5000);
+		Select s1=new Select(f.findElement(By.id("id_country")));
+		s1.selectByValue("21");
+		Thread.sleep(5000);
+		f.findElement(By.id("other")).sendKeys("I just want to love the online shopping a lot and i thinks that this site really fullfill my desire of getting updated to new fashion");
+		Thread.sleep(5000);
+		f.findElement(By.id("phone")).sendKeys("330-541-0441");
+		Thread.sleep(5000);
+		f.findElement(By.id("phone_mobile")).sendKeys("330-330-9999");
+		Thread.sleep(5000);
+		f.findElement(By.id("alias")).sendKeys("demo10@gmail.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("submitAccount")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath("sf-with-ul")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("color_2")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='quantity_wanted_p']/a[2]/span/i")).click();
+		Thread.sleep(5000);
+		Select a=new Select(f.findElement(By.id("group_1")));
+		a.selectByValue("3");
+		Thread.sleep(5000);
+		f.findElement(By.name("Submit")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='layer_cart']/div[1]/div[2]/div[4]/span/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='block_top_menu']/ul/li[2]/a")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='center_column']/ul/li[5]/div/div[2]/div[2]/a[1]/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='layer_cart']/div[1]/div[2]/div[4]/span/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='button_order_cart']/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='center_column']/p[2]/a[1]/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.className(".//*[@id='header']/div[2]/div/div/nav/div[2]/a")).click();
+		Thread.sleep(5000);
+		f.close();
+		
+
+	}
+
+}

@@ -1,0 +1,53 @@
+Using Priority in TestNg:
+-----------------------------
+
+Sample:
+---------
+
+package kit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class TestAnna 
+{
+	
+	WebDriver f=new FirefoxDriver();
+	@Test(priority=1)
+	public void OpenFacebook()
+	{
+		f.get("http://www.facebook.com");
+		
+	}
+	@Test(priority=2)
+	public void Login() throws InterruptedException
+	{
+		f.findElement(By.id("email")).sendKeys("bitra9999@gmail.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("pass")).sendKeys("77886699");
+		Thread.sleep(5000);
+	}
+	@Test(priority=3)
+	public void SignIn() throws InterruptedException
+	{
+		f.findElement(By.id("u_0_n")).click();
+		Thread.sleep(5000);
+	}
+	@Test(priority=4)
+	public void SignOut() throws InterruptedException
+	{
+		f.findElement(By.id("pageLoginAnchor")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='BLUE_BAR_ID_DO_NOT_USE']/div/div/div[1]/div/div/ul/li[12]/a/span/span")).click();
+		
+	}
+	@Test(priority=5)
+	public void CloseBrowser()
+	{
+		f.close();
+		
+		
+	}
+}

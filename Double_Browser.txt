@@ -1,0 +1,236 @@
+Ashok C Bitra					
+
+Handling Double_Browser In a Single_Program:
+----------------------------------------------------------
+Aim:
+-----
+	1: Opening the 2 Browsers based on the Priority values.
+	2: Displaying the Titles of the "Webpages".
+
+package doublelang;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class BrowserDisplay 
+{
+	
+	@Test(priority=1)
+	public void Old() throws InterruptedException
+	{
+		WebDriver f1=new FirefoxDriver();
+		Thread.sleep(5000);
+		f1.get("http://www.gmail.com");
+		Thread.sleep(5000);
+		f1.navigate().to("http://www.facebook.com");
+		Thread.sleep(5000);
+		String title = f1.getTitle();
+		System.out.println("....The Title of the page is..."+title);
+		f1.close();
+		
+	}
+	@Test(priority=2)
+	public void New() throws InterruptedException
+	{
+		WebDriver f2=new FirefoxDriver();
+		Thread.sleep(5000);
+		f2.get("http://store.demoqa.com");
+		Thread.sleep(5000);
+		f2.navigate().to("http://newtours.demoaut.com");
+		Thread.sleep(5000);
+		String page = f2.getTitle();
+		System.out.println("....The Title of the page is..."+page);
+		f2.close();
+		
+		
+	}
+}
+
+Output:
+---------
+
+....The Title of the page is...Facebook - Log In or Sign Up
+....The Title of the page is...Welcome: Mercury Tours
+PASSED: Old
+PASSED: New
+
+Sample1:
+----------
+
+Display_Title_URL of an WebPage:
+-----------------------------------------
+
+package doublelang;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class BrowserDisplay 
+{
+	
+	@Test(priority=1)
+	public void Old() throws InterruptedException
+	{
+		WebDriver f1=new FirefoxDriver();
+		Thread.sleep(5000);
+		f1.get("http://www.gmail.com");
+		Thread.sleep(5000);
+		f1.navigate().to("http://www.facebook.com");
+		Thread.sleep(5000);
+		String title = f1.getTitle();
+		System.out.println("....The Title of the page is..."+title);
+		String url=f1.getCurrentUrl();
+		System.out.println("....The URL of the page is..."+url);
+		f1.close();
+		
+	}
+	@Test(priority=2)
+	public void New() throws InterruptedException
+	{
+		WebDriver f2=new FirefoxDriver();
+		Thread.sleep(5000);
+		f2.get("http://store.demoqa.com");
+		Thread.sleep(5000);
+		f2.navigate().to("http://newtours.demoaut.com");
+		Thread.sleep(5000);
+		String page = f2.getTitle();
+		System.out.println("....The Title of the page is..."+page);
+		String pageurl=f2.getCurrentUrl();
+		System.out.println("....The URL of the page is..."+pageurl);
+		f2.close();
+		
+		
+	}
+}
+
+
+Output:
+---------
+
+....The Title of the page is...Facebook - Log In or Sign Up
+....The URL of the page is...https://www.facebook.com/
+....The Title of the page is...Welcome: Mercury Tours
+....The URL of the page is...http://newtours.demoaut.com/
+PASSED: Old
+PASSED: New
+
+Sample 2:
+------------
+Display_Title_URL_SourceCode:
+---------------------------------------
+
+package doublelang;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class BrowserDisplay 
+{
+	
+	@Test(priority=1)
+	public void Old() throws InterruptedException
+	{
+		WebDriver f1=new FirefoxDriver();
+		Thread.sleep(5000);
+		f1.get("http://www.gmail.com");
+		Thread.sleep(5000);
+		f1.navigate().to("http://www.facebook.com");
+		Thread.sleep(5000);
+		String title = f1.getTitle();
+		System.out.println("....The Title of the page is..."+title);
+		String url=f1.getCurrentUrl();
+		System.out.println("....The URL of the page is..."+url);
+		String sourcecode=f1.getPageSource();
+		System.out.println("....The Sourcecode of the page is..."+sourcecode);
+		f1.close();
+		
+	}
+	
+}
+
+Sample 3:
+-----------
+Handle_Compare_Titles_Display:
+----------------------------------------
+
+package doublelang;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class Verification 
+{
+	@Test(priority=1)
+	public void Verify() throws InterruptedException
+	{
+		WebDriver f=new FirefoxDriver();
+		f.get("http://www.twitter.com");
+		Thread.sleep(5000);
+		String actual=f.getTitle();
+		String base=f.getTitle();
+		if(base.equals(actual))
+		{
+			System.out.println(".....The Inspection has been....passed....."+base);
+		}
+		f.close();
+		
+	}
+
+}
+
+
+Output:
+---------
+
+.....The Inspection has been....passed.....Twitter. It's what's happening.
+PASSED: Verify
+
+Sample 3:
+------------
+Another Example for Handle_Compare_Titles_Display:
+------------------------------------------------------------------
+
+package doublelang;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class Cross 
+{
+	WebDriver f=new FirefoxDriver();
+	@Test(priority=1)
+	public void base() throws InterruptedException
+	{
+		f.get("http://www.gmail.com");
+		Thread.sleep(5000);
+		String base=f.getTitle();
+		f.navigate().to("http://www.facebook.com");
+		Thread.sleep(5000);
+		String actual=f.getTitle();
+		if(base.equals(actual))
+		{
+			System.out.println("....Titles of the page are"+base+actual);
+			System.out.println("....PASSED...");
+		}
+		else
+		{
+			System.out.println("....Titles of the page are..."+base+actual);
+			System.out.println("...FAILED...");
+		}
+		f.close();
+		
+	}
+}
+
+
+Output:
+---------
+
+....Titles of the page are...GmailFacebook - Log In or Sign Up
+...FAILED...
+PASSED: base

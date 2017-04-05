@@ -1,0 +1,272 @@
+Ashok C Bitra						Selenium QA Testing
+							------------------------
+Mahesh : Tutor						      SYBERSYS
+
+Keyword_Automation_Framework: With the help of Keyword Automation Framework we can handle the testcases with multiple keywords.
+
+Keypoints:
+-----------
+	1: Create a JavaProject in eclipse
+		{create 3 classes in java project}
+		a. TestCaseProcess()
+		b. ExcelSheet()
+		c. ExecutionProcess()
+	2: Create a Excel Sheet File with the Data that we need to run the JavaProject.
+		a. Always Save the Excel Sheet file as "97 2003 Excel Workbook".
+
+ 
+Sample:
+---------
+
+TestCaseProcess:
+--------------------
+
+package testPack;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class TestCaseProcess 
+{
+	WebDriver d;
+	
+	public void Open_Browser(String tdata)
+	{
+		if(tdata.equalsIgnoreCase("Firefox"))
+		{
+			d=new FirefoxDriver();
+			
+		}
+		else if(tdata.equalsIgnoreCase("Chrome"))
+		{
+			System.setProperty("", "");
+			d=new ChromeDriver();
+			
+		}
+		else if(tdata.equalsIgnoreCase("IE"))
+		{
+			System.setProperty("", "");
+			d=new InternetExplorerDriver();
+			
+		}
+		
+	}
+	public void Enter_Url(String tdata)
+	{
+		
+		d.get(tdata);
+	}
+	public void Enter_Text(String ptype,String pvalue,String tdata)
+	{
+		By b=ElementValue(ptype,pvalue);
+		d.findElement(b).sendKeys(tdata);
+		
+	}
+	public void Click_Button(String ptype,String pvalue)
+	{
+		By b=ElementValue(ptype,pvalue);
+		d.findElement(b).click();
+		
+	}
+	public By ElementValue(String ptype,String pvalue)
+	{
+		By b;
+		switch(ptype)
+		{
+			case "id":
+				b=By.id(pvalue);
+				break;
+				
+			case "name":
+				b=By.name(pvalue);
+				break;
+			case "cssSelector":
+				b=By.cssSelector(pvalue);
+				break;
+				
+			case "linkText":
+				b=By.linkText(pvalue);
+				break;
+				
+			case "partialLinkText":
+				b=By.partialLinkText(pvalue);
+				break;
+				
+			case "tagName":
+				b=By.tagName(pvalue);
+				break;
+				
+			case "xpath":
+				b=By.xpath(pvalue);
+				break;
+				
+			default:
+				b=null;
+				break;
+	
+		}
+		return b;
+	}
+
+}
+
+ExcelSheetProcess:
+----------------------
+
+package testPack;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
+public class ExcelSheetProcess
+{
+	
+	// create Workbook and Sheet objects
+	
+	Workbook wb;
+	Sheet sh;
+	
+	// open excel sheet
+	
+	public void OpenSheet(String Filepath) throws BiffException, IOException
+	{
+		FileInputStream fs=new FileInputStream(Filepath);
+		wb=Workbook.getWorkbook(fs);
+		sh=wb.getSheet(0);
+		
+	}
+	
+	// Get Cell Values from sheet
+	
+	public String GetCellValues(int c,int r)
+	{
+		String data=sh.getCell(c, r).getContents();
+		return data;
+		
+	}
+	
+	// Get Rows
+	
+	public int Rows()
+	{
+		
+		int r=sh.getRows();
+		return r;
+		
+	}
+	
+	// Get Columns
+	
+	public int Cols()
+	{
+		
+		int c=sh.getColumns();
+		return c;
+		
+	}
+
+}
+
+ExecutionProcess :
+---------------------
+
+package testPack;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import org.testng.annotations.Test;
+
+import jxl.read.biff.BiffException;
+
+public class ExecutionProcess 
+{
+	@Test(priority=1)
+	public void FinalProcess() throws BiffException, IOException, InterruptedException
+	{
+		ExcelSheetProcess mysheet=new ExcelSheetProcess();
+		System.out.println("...Enter File");
+		Scanner sc=new Scanner(System.in);
+		String s1 = sc.next();
+		mysheet.OpenSheet(s1);
+		int rcount=mysheet.Rows();
+		int ccount=mysheet.Cols();
+		System.out.println("....Row Count..."+rcount);
+		System.out.println("....Column Count...."+ccount);
+		String tname="";
+		String ptype="";
+		String pvalue="";
+		String tdata="";
+		TestCaseProcess obj=new TestCaseProcess();
+		
+		for(int r=1;r<rcount;r++)
+		{
+			tname=mysheet.GetCellValues(0, r);
+			
+			ptype=mysheet.GetCellValues(1, r);
+			
+			pvalue=mysheet.GetCellValues(2, r);
+			
+			tdata=mysheet.GetCellValues(3, r);
+			
+			System.out.println(tname+" "+ptype+" "+pvalue+" "+tdata);
+			Thread.sleep(5000);
+			switch(tname)
+			{
+			
+			case "Open_Browser":
+				obj.Open_Browser(tdata);
+				break;
+				
+			case "Enter_Url":
+				obj.Enter_Url(tdata);
+				break;
+				
+			case "Enter_Text":
+				obj.Enter_Text(ptype, pvalue, tdata);
+				break;
+				
+			case "Click_Button":
+				obj.Click_Button(ptype, pvalue);
+				break;
+				
+			default:
+				System.out.println(" No TestCase ");
+				break;
+				
+				
+			}
+		}
+		
+		
+	}
+
+}
+
+
+Output:
+---------
+
+...Enter File
+KeywordFacebook.xls
+....Row Count...6
+....Column Count....4
+Open_Browser null null Firefox
+Enter_Url null null http://www.facebook.com
+Enter_Text id email bitra9999@gmail.com
+Enter_Text id pass 888666777
+Click_Button id loginbutton null
+PASSED: FinalProcess
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================

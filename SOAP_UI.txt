@@ -1,0 +1,40 @@
+Ashok C Bitra						Selenium QA Testing
+Mahesh_Tutor						           Sybersys
+
+SOAP_UI:
+------------
+
+Simple Object Access Protocol User Interface:
+------------------------------------------------------
+
+	1: Soap UI is used to Access the WebServices.
+	2: These WebServices contain "Business Logical Functions" which can be used to access the Web Url's.
+These WebServices can be tested by two types of softwares :
+
+	1: SoapUI : Process Input and Output formates by the 
+
+		a: XML 
+
+	2: SoapUI Ng(Simple Object Access Protocol User Interface Next Generation) : Process Input and Output formates by the 
+
+		a: XML
+		b: JSon
+Soap UI:
+----------
+
+	1: Download the Soap UI 
+	2: Create a Soap Project.
+	3: Provide a name to Soap Project and provide the URL but make sure " enter "?wsdl" at the end of the url".
+	4. Delete the older versions and maintain the new Version of Project.
+	5: Create a "Test Suite". 
+	6: Create a "Test Case".
+	7: Create a "Test Steps".
+
+These TestCases can be executed by the TestSteps by providing the Valid data in XML files.
+
+Example:
+-----------
+	URL Provided: http://www.dneonline.com/calculator.asmx
+	
+	make sure we enter "?wsdl" at the end of Url ::: http://www.dneonline.com/calculator.asmx?wsdl
+

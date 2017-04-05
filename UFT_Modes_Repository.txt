@@ -1,0 +1,89 @@
+Ashok C Bitra								Selenium QA Testing
+Mahesh : Tutor 								       Saibersys
+
+UFT_Modes:
+---------------
+
+There are Generally 4 types of Recording modes in UFT(Unified_Functional_Testing) they are:
+	 
+	1: Default Recording Mode : These Mode gets the VB_Script by the action of Keyboard and Mouse on the forms.
+
+	2: Analog Recording Mode: These Mode gets the VB_Script by the action of Mouse.
+
+	3: LowLevel Recording Mode: These Recording Mode is the best in termns of Understanding the action that we perform on the form which generally stores the Position_Numbers by 			              clicking.
+
+	4:  Insight Recording Mode: These Mode is used to record the script when ever the Default Recording Mode does not store the objects.
+
+
+Default Recording Mode:
+------------------------------
+
+Sample: 
+
+Dialog("Login").WinEdit("Agent Name:").Set "prashanth" 
+Dialog("Login").WinEdit("Password:").SetSecure "5849d3d18cfe81a4c5d2ddd77a34bfd183c00e4a" 
+Dialog("Login").WinButton("OK").Click 
+Window("Flight Reservation").Close
+
+ Analog Recording Mode:
+------------------------------
+
+Sample:
+
+Window("Paint").RunAnalog "Track1"
+
+LowLevel Recording Mode:
+--------------------------------
+
+Sample:
+
+Window("Window").WinObject("Running applications").Click 513,24 
+Window("Login").Activate 
+Window("Login").WinObject("Agent Name:").Type "prashanth" 
+Window("Login").WinObject("Password:").Click 25,4 
+Window("Login").WinObject("Password:").Type "mercury" 
+Window("Login").WinObject("OK").Click 43,10 
+Window("Flight Reservation").Close
+
+Insight Recording Mode:
+-----------------------------
+
+Sample:
+
+Window("Window").InsightObject("InsightObject").Click 
+Window("Login").WinObject("Text").Type "prashanth"
+Window("Login").WinObject("Text_2").Type "mercury"
+Window("Flight Reservation").WinObject("Text").Type "prashanth"
+
+Repositories in UFT:
+------------------------
+
+There are generally 2 Types of Repositories in UFT, They are 
+
+	1: Local Object Repository : It is an Default Object Repository where the objects will be shared in the repository whenever we perform the actions on our forms.
+
+	2: Shared or Global  Object Repository : All the Local_Objects will be shared in a "Shared Folder" which can be used by other Projects and these is the phenomenon that works in 				             Shared_Object_Repository.
+Procedure:
+-------------
+
+Step 1:
+--------
+	Creating a Shared Object Repository:
+
+		a: All repositories are local by default.  To create a Shared Object Repository, in the Object Repository Dialog Box  , Click File > Export Local Objects .
+
+		b: Repository files have an extension ".tsr" .
+
+		c: The Shared Repository File is now created .
+
+Step 2:
+--------
+	Associating a Shared Object Repository:
+
+		a: Next step is to associate the repository to your test, which enables you to use it. 
+
+		b: To associate repository with a test, Click Resources > Associate Repository .
+
+		c: You can select the Repository to associate with Actions available in your test.
+
+		d: Now you  can now use this shared repository to develop your test.

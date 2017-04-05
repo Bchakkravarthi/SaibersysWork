@@ -1,0 +1,149 @@
+			Basic core java sampling programming:
+			------------------------------------------------------
+SAMPLE PROGRAM:
+
+package test;
+
+public class Example 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		System.out.print("SYBERSYS");
+		System.out.print("SELENIUM TESTING BATCH");
+		System.out.print("MAHESH BABU TUTOR");
+		System.out.print("WELCOME TO THE WORLD OF CORE JAVA");
+		System.out.print("ASHOK CHAKRAVARTHY BITRA");
+		System.out.print("THANK YOU");
+		
+	}
+
+}
+
+ADDING TWO NUMBERS:
+-------------------------------------
+package test;
+
+public class Test1 
+{
+
+	public static void main(String[] args) 
+	{
+		int a=10;
+		int b=20;
+		int c=30;
+		int d= a+b+c;
+		System.out.print("the sum of 3 values is:"+d);
+	}
+
+}
+
+Creating the OBJECT and accessing the methods of other class:
+------------------------------------------------------------------------------------
+procedure:
+--------------
+first we created a class Test3 and declared a function Display() and we are going to display the content in the Display() function by creating an object of Test3 class in Test4 class.
+	
+	package test;
+
+	public class Test3
+	{
+		void Display()
+		{
+			System.out.print("hi how are sir");
+		}
+	}
+
+
+
+	package test;
+
+	public class Test4 
+	{
+
+		public static void main(String[] args) 
+		{
+			Test3 t=new Test3();
+			t.Display();
+		
+		}
+
+	}
+Example 2:
+---------------
+	package test;
+
+	public class Test3
+	{
+		void Display()
+		{
+			System.out.print("INDIAN CRICKET TEAM");
+			System.out.print("CAPTAIN : VIRAT");
+			System.out.print("VICE-CAPTAIN: RAHANE");
+			System.out.print("WICKET-KEEPER: SAHA");
+		
+		}
+	}
+
+	package test;
+
+	public class Test4 
+	{
+
+		public static void main(String[] args) 
+		{
+			Test3 t=new Test3();
+			t.Display();
+		
+		}
+
+	}
+Example 3:
+---------------
+	package test;
+
+	public class Test3
+	{
+	
+		void Display()
+		{
+			System.out.print("INDIAN CRICKET TEAM");
+			System.out.print("VIRAT KOHLI");
+		
+		}
+		void Display1()
+		{
+			System.out.print("ENGLAND CRICKET TEAM");
+			System.out.print("ALESTER COOK");
+		}
+		void Display2()
+		{
+			System.out.print("WINNER OF SERIES");
+			System.out.print("INDIAN CRICKET TEAM");
+		}
+
+	
+	}
+
+	package test;
+
+	public class Test4 
+	{
+
+		public static void main(String[] args) 
+		{
+			Test3 t=new Test3();
+			Test3 t1=new Test3();
+			Test3 t2=new Test3();
+			t.Display();
+			t1.Display();
+			t2.Display();
+		
+		}
+
+	}
+
+
+
+

@@ -1,0 +1,62 @@
+Ashok C Bitra					Gmail_Login_Logot_Testing:
+Selenium QA Testing Batch				---------------------------------------
+Tutor: Mahesh Babu						Sybersys
+							-----------
+Basic Functionality of the programming: 
+1: open the browser
+2: goto the url "http://www.google.com".
+3: click on the "gmail" button.
+4: provide the valid "user id details" and click on the "next" button.
+5: provide the valid "password" for the corresponding user id and click on the "sign in" button.
+6: click on the "wallpaper image".
+7: click on the "signout button" and by choosing the "close function" we can successfully close the browser.
+
+Here we can use the different web element properties such as
+1: id
+2: xpath
+3: classname
+4: link path and so on..,
+
+Assignment:
+----------------
+
+package sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Example 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		WebDriver f=new FirefoxDriver();
+		f.get("http://www.google.com");
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='gbw']/div/div/div[1]/div[1]/a")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("Email")).sendKeys("bitra9999@gmail.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("next")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("Passwd")).sendKeys("*******");
+		Thread.sleep(5000);
+		f.findElement(By.id("signIn")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='gb']/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("gb_71")).click();
+		Thread.sleep(5000);
+		f.close();
+		
+	}
+
+}
+
+
+
+
+
+
+

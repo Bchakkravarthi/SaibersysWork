@@ -1,0 +1,144 @@
+Ashok C Bitra							Selenium QA Testing
+Mahesh : Tutor							        Saibersys
+
+Cucumber_Sample_Demo:
+--------------------------------
+	Install these Plugins in Eclipse: (Anyone From Two Links but not Both)
+	-------------------------------------
+
+		a: https://cucumber.io/cucumber-eclipse//update-site
+
+ 		b: http://cucumber.github.com/cucumber-eclipse/update-site
+
+	1: With the help of Cucumber testing tool we test the logical data steps which we store in "Feature file".
+	
+	2: Cucumber mainly contains 2 frameworks:
+
+		a: BDD(Behaviour Data Driven): Contains the steps for execution of project.
+
+		b: TDD(Test Data Driven): Contains the Different set of data for execution of project.
+
+	3: As in TestNg, Cucumber Contains the Annotations which have a specific meaning.
+
+	#Sample Feature Definition Template
+
+		1: @tag : Separate different testcases
+
+		2: Feature: Title of your feature
+			Example: I want to use this template for my feature file
+
+		@tag1
+		3: Scenario: Title of your scenario
+
+		4: Given I want to write a step with precondition
+			And some other precondition
+
+		5: When I complete action
+
+		6: And some other action
+			And yet another action
+
+		7: Then I validate the outcomes
+			And check more outcomes
+
+Sample:
+---------
+
+Procedure:
+		1: Create a Java Project and Create a package as "Example.feature" .
+		2: Always remember to import the Cucumber Jar files with Selenium Jar Files.
+		3: Then create a File with "Example.feature" .
+		4: Write a sample code to perform the basic functionalities of Cucumber with proper annotations and remember to Give @tag and Once the code is written Select all the code, 		    Right click and set the PrettyFormat.
+		5: Select the Example.feature file and Run as Cucumber Feature.
+		6: Make sure you delete the "Spring jar file" from the Set of Cucumber jar files.
+		7: Copy all the missing snippets data from the Console after running the Step 6 ::: " Create a New Class and Paste all the data from console (Make necesarry Changes) and run 		     the Example.feature file" .
+		8: Main Step is Run the Example.feature file.
+
+
+File.feature file:
+-------------------
+@tag1
+Feature: My First Project in Cucumber
+
+  Scenario: i want to perform testing on Facebook Login_Logout
+    Given i am member of Facebook Family
+    When Ashok enter the Username
+    And Ashok enter the Password
+    Then Ashok should enter the Facebook account
+    But Ashok FB HomePageshould not be closed
+
+Final():
+--------
+
+package firstCucu.feature;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Final 
+{
+	@Given("^i am member of Facebook Family$")
+	public void i_am_member_of_Facebook_Family() throws Throwable 
+	{
+	    System.out.println("Ashok is a member of Facebook Family ");
+	    
+	}
+
+	@When("^Ashok enter the Username$")
+	public void ashok_enter_the_Username() throws Throwable
+	{
+		System.out.println(" Ashok enter the Username ");
+	}
+
+	@When("^Ashok enter the Password$")
+	public void ashok_enter_the_Password() throws Throwable 
+	{
+		System.out.println(" Ashok enter the Password "); 
+	}
+
+	@Then("^Ashok should enter the Facebook account$")
+	public void ashok_should_enter_the_Facebook_account() throws Throwable 
+	{
+		System.out.println(" Ashok should enter the Facebook account ");   
+	}
+
+	@Then("^Ashok FB HomePageshould not be closed$")
+	public void ashok_FB_HomePageshould_not_be_closed() throws Throwable 
+	{
+		System.out.println(" Ashok FB HomePageshould not be closed ");
+	}
+
+
+
+}
+
+Output:
+---------
+
+@tag1
+Feature: My First Project in Cucumber
+Ashok is a member of Facebook Family 
+ Ashok enter the Username 
+ Ashok enter the Password 
+ Ashok should enter the Facebook account 
+ Ashok FB HomePageshould not be closed 
+
+  Scenario: i want to perform testing on Facebook Login_Logout # C:/Users/prash/Documents/New folder/MyCucumber/src/firstCucu/feature/File.feature:4
+    Given i am member of Facebook Family                       # Final.i_am_member_of_Facebook_Family()
+    When Ashok enter the Username                              # Final.ashok_enter_the_Username()
+    And Ashok enter the Password                               # Final.ashok_enter_the_Password()
+    Then Ashok should enter the Facebook account               # Final.ashok_should_enter_the_Facebook_account()
+    But Ashok FB HomePageshould not be closed                  # Final.ashok_FB_HomePageshould_not_be_closed()
+
+1 Scenarios (1 passed)
+5 Steps (5 passed)
+0m0.250s
+
+
+
+
+
+
+
+

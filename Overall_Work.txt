@@ -1,0 +1,329 @@
+								Ashok C Bitra
+								----------------
+
+Using Test Annatations: Test Case Automation Framework:
+
+Sample1:
+-----------
+
+package sampleSkit;
+
+import org.testng.annotations.Test;
+
+public class Annatations 
+{
+	@Test(priority=1)
+	public void Enter()
+	{
+		
+		System.out.println("....Enter to the Shopping Mall....");
+		
+	}
+	
+	@Test(priority=2)
+	public void Directions()
+	{
+		
+		System.out.println("....Going to the Mens Apparell Section....");
+		
+	}
+	@Test(priority=3)
+	public void Destination()
+	{
+		
+		System.out.println("....Getting updated to newest Fashion and Trends....");
+		
+	}
+	@Test(priority=4)
+	public void FinishTask()
+	{
+		
+		System.out.println("....Leaving the Shopping Like a BOSS....");
+		
+	}
+}
+
+
+Sample 2:
+-----------
+
+package sampleSkit;
+
+import org.testng.annotations.Test;
+
+public class Annatations 
+{
+	@Test(priority=1)
+	public void Enter()
+	{
+		
+		System.out.println("....Enter to the Shopping Mall....");
+		
+	}
+	
+	@Test(enabled=false)
+	public void Directions()
+	{
+		
+		System.out.println("....Going to the Mens Apparell Section....");
+		
+	}
+	@Test(priority=3)
+	public void Destination()
+	{
+		
+		System.out.println("....Getting updated to newest Fashion and Trends....");
+		
+	}
+	@Test(priority=4)
+	public void FinishTask()
+	{
+		
+		System.out.println("....Leaving the Shopping Like a BOSS....");
+		
+	}
+}
+
+
+Sample 3:
+-----------
+package sampleSkit;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Annatations 
+{
+	@BeforeMethod
+	public void Enter()
+	{
+		
+		System.out.println("....Enter to the Shopping Mall....");
+		
+	}
+	
+	@Test(priority=1)
+	public void Directions()
+	{
+		
+		System.out.println("....Going to the Mens Apparell Section....");
+		
+	}
+	@Test(priority=2)
+	public void Destination()
+	{
+		
+		System.out.println("....Getting updated to newest Fashion and Trends....");
+		
+	}
+	@AfterMethod
+	public void FinishTask()
+	{
+		
+		System.out.println("....Leaving the Shopping Like a BOSS....");
+		
+	}
+}
+
+
+Sample 4:
+-----------
+
+Passing values from one TestCase to another TestCase by using the String of Arrays concept:
+
+package sampleSkit;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class PassingTestcases 
+{
+	@Test(dataProvider="my values")
+	public void Digit(String x,String y)
+	{
+		
+		int z=Integer.parseInt(x)+Integer.parseInt(y);
+		System.out.println(" Sum of two numbers is "+z);
+		
+	}
+	@DataProvider(name="my values")
+	public String[][] Data()
+	{
+		
+		int a=19;
+		int b=28;
+		String[][] s=new String[1][2];
+		
+		s[0][0]=Integer.toString(a);
+		
+		s[0][1]=Integer.toString(b);
+		
+		return s;
+	}
+
+}
+
+
+Sample 5:
+------------
+
+Gmail_Login_Logout_Test:
+
+
+package sampleSkit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class GmailTesting 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://www.gmail.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("Email")).sendKeys("bitra9999@gmail.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("next")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("Passwd")).sendKeys("7766889");
+		Thread.sleep(5000);
+		f.findElement(By.id("signIn")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath(".//*[@id='gb']/div[1]/div[1]/div[2]/div[4]/div[1]/a/span")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("gb_71")).click();
+		Thread.sleep(5000);
+		f.close();
+		
+	}
+
+}
+
+
+Sample 6:
+-----------
+Handling the Duplication of Objects in an website (For example: Same Names to the web Elements in an website).
+
+package sampleSkit;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class DuplicationObjects 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://www.infibeam.com");
+		Thread.sleep(5000);
+		f.findElement(By.id("loginlink")).click();
+		Thread.sleep(5000);
+		f.findElement(By.id("new-account-btn")).click();
+		Thread.sleep(5000);
+		List<WebElement> s=f.findElements(By.id("password"));
+		s.get(0).sendKeys("mypassword123");
+		Thread.sleep(5000);
+		s.get(1).sendKeys("idontwanttotell2345");
+		Thread.sleep(5000);
+		f.close();
+		
+
+	}
+
+}
+
+
+Sample 7:
+------------
+Handling the Mouse_Action functions:
+
+
+package sampleSkit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ActionOnMouse 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://store.demoqa.com");
+		Thread.sleep(5000);
+		WebElement s=f.findElement(By.xpath(".//*[@id='menu-item-33']/a"));
+		Actions a=new Actions(f);
+		a.moveToElement(s).build().perform();
+		f.findElement(By.xpath(".//*[@id='menu-item-35']/a")).click();
+		Thread.sleep(5000);
+		f.close();
+		
+
+	}
+
+}
+
+
+Sample 8:
+-----------
+Handling the different Web Elements for example RadioButtons and DropDownLists.
+package sampleSkit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class RadioDropDown 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(5000);
+		f.get("http://www.newtours.demoaut.com");
+		Thread.sleep(5000);
+		f.findElement(By.name("userName")).sendKeys("mahesh");
+		Thread.sleep(5000);
+		f.findElement(By.name("password")).sendKeys("mahesh");
+		Thread.sleep(5000);
+		f.findElement(By.name("login")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/b/font/input[2]")).click();
+		Thread.sleep(5000);
+		f.findElement(By.xpath("html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/b/font/input[1]")).click();
+		Thread.sleep(5000);
+		Select s=new Select(f.findElement(By.name("fromPort")));
+		s.selectByValue("London");
+		Thread.sleep(5000);
+		Select d=new Select(f.findElement(By.name("fromMonth")));
+		d.selectByValue("4");
+		Thread.sleep(5000);
+		Select a=new Select(f.findElement(By.name("fromDay")));
+		a.selectByValue("6");
+		Thread.sleep(5000);
+		f.close();
+		
+	}
+
+}
+

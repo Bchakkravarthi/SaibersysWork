@@ -1,0 +1,457 @@
+Ashok C Bitra							Selenium QA Testing
+Mahesh : Tutor							        Saibersys
+
+
+Java_Concepts:
+-------------------
+
+Inheritence:
+-------------
+
+package casual;
+
+public class GrandParents 
+{
+	public void Grand()
+	{
+		System.out.println(" Welcome to the world of Bitra's Legacy");
+		System.out.println("...BITRA BULLI...");
+	}
+
+}
+
+package casual;
+
+public class Parents extends GrandParents
+{
+	public void Par()
+	{
+		
+		System.out.println(" Legacy Continues ");
+		System.out.println(" Bitra NAGESWARA RAO");
+		System.out.println(" Bitra SARADHAMBA ");
+		System.out.println(" Bitra SREENIVASA RAO ");
+		System.out.println(" Bitra SUJATHA ");
+	}
+
+}
+
+package casual;
+
+public class Present extends Parents
+{
+	
+	public static void main(String[] args) 
+	{
+		
+		Present obj=new Present();
+		obj.Grand();
+		obj.Par();
+		System.out.println(" Legacy Continues ");
+		System.out.println(" Bitra V RAMESH ");
+		System.out.println(" Bitra KEERTHI ");
+		System.out.println(" Bitra ASHOK CHAKRAVARTHY ");
+
+	}
+
+}
+
+Output:
+--------
+
+ Welcome to the world of Bitra's Legacy
+...BITRA BULLI...
+ Legacy Continues 
+ Bitra NAGESWARA RAO
+ Bitra SARADHAMBA 
+ Bitra SREENIVASA RAO 
+ Bitra SUJATHA 
+ Legacy Continues 
+ Bitra V RAMESH 
+ Bitra KEERTHI 
+ Bitra ASHOK CHAKRAVARTHY 
+
+Sample:
+---------
+
+	Exception Handling: Handling the Expected or unexpected errors in out project and executing the rest part of our project without any errors.
+
+package excephand;
+
+public class First 
+{
+	
+	public static void main(String[] args) 
+	{
+		int a=10;
+		int b=20;
+		int c;
+		System.out.println(" The value of a "+a);
+		System.out.println(" The value of b "+b);
+		
+		try
+		{
+			c=a/0;
+			System.out.println(" Result.."+c);
+		}
+		catch(ArithmeticException e) // catch(Exception (Type) e(object))" General Syntax"
+		{
+			System.out.println(e);
+			System.out.println(" I am going out of Catch block and going to handle the other block of code ");
+		}
+		int result;
+		result=a*b;
+		System.out.println(" Result will be  "+result);	
+		
+
+	}
+
+}
+
+Output:
+---------
+
+ The value of a 10
+ The value of b 20
+java.lang.ArithmeticException: / by zero
+ I am going out of Catch block and going to handle the other block of code 
+ Result will be  200
+
+Sample:
+---------
+
+	Collections: 
+			1: List
+				a: ArrayList
+				b: LinkedList
+				c: Vector
+			2: Set
+				a: HashSet
+				b: LinkedHashSet
+				c: TreeSet
+			3: Map
+				a: HashMap
+				b: LinkedHashMap
+				c: TreeMap
+
+	1: List
+		a: ArrayList
+			1: Arraylist is a class which implements List interface. 
+			
+			2: It is widely used because of the functionality and flexibility it offers over the Arrays.
+			
+			3: Problem with arrays is that they are of fixed length so if it is full we cannot add any more elements to it.
+
+			4: On the other ArrayList can dynamically grow and shrink as per the need.
+
+			5: ArrayList class enables us to use predefined methods of it which makes our task easy.
+Sample:
+---------
+
+package pack;
+
+import java.util.ArrayList;
+
+public class ArrayListExample 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		ArrayList<String> al=new ArrayList<>();
+		al.add(" Remi ");
+		al.add(" Chary ");
+		al.add(" Bunty ");
+		al.add(" Sarath ");
+		System.out.println(" Members in the First List are..."+al);
+		al.add(0," Sunny ");
+		al.add(1," Ashit ");
+		System.out.println(" Members in the List after insertion are..."+al);
+		al.remove(4);
+		System.out.println(" Members in the List after updation are..."+al);
+		al.remove(3);
+		System.out.println(" Final members of the list are..."+al);
+		
+	}
+
+}
+
+Output:
+---------
+
+ Members in the First List are...[ Remi ,  Chary ,  Bunty ,  Sarath ]
+ Members in the List after insertion are...[ Sunny ,  Ashit ,  Remi ,  Chary ,  Bunty ,  Sarath ]
+ Members in the List after updation are...[ Sunny ,  Ashit ,  Remi ,  Chary ,  Sarath ]
+ Final members of the list are...[ Sunny ,  Ashit ,  Remi ,  Sarath ]
+
+b: LinkedList:
+----------------
+
+Sample:
+---------
+
+package pack;
+
+import java.util.LinkedList;
+
+public class LinkedListExample 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		LinkedList<String> ll=new LinkedList<>();
+		ll.add(" Remi ");
+		ll.add(" Chary ");
+		ll.add(" Bunty ");
+		ll.add(" Sarath ");
+		System.out.println(" Members in the First List are..."+ll);
+		ll.addFirst(" Sunny ");
+		ll.addLast(" Ashit ");
+		System.out.println(" Members in the List after insertion are..."+ll);
+		ll.removeFirst();
+		ll.remove(4);
+		System.out.println(" Members in the List after updation are..."+ll);
+		ll.remove(3);
+		System.out.println(" Final members of the list are..."+ll);
+
+	}
+
+}
+
+Output:
+---------
+
+ Members in the First List are...[ Remi ,  Chary ,  Bunty ,  Sarath ]
+ Members in the List after insertion are...[ Sunny ,  Remi ,  Chary ,  Bunty ,  Sarath ,  Ashit ]
+ Members in the List after updation are...[ Remi ,  Chary ,  Bunty ,  Sarath ]
+ Final members of the list are...[ Remi ,  Chary ,  Bunty ]
+
+		
+c: Vector:
+----------
+
+Sample:
+---------
+
+package pack;
+
+import java.util.Vector;
+
+public class VectorExample 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		Vector<String> v=new Vector<>();
+		v.add(" Chary ");
+		v.add(" yochi ");
+		v.add(" ktr ");
+		v.add(" kcr ");
+		v.add(" cbn ");
+		System.out.println(" Size of family..."+v.size());
+		System.out.println(" The Members in the first family are..."+v);
+		v.add(0, "BalaKrishna");
+		System.out.println(" Size of family..."+v.size());
+		System.out.println(" The Members in the family after one generation are..."+v);
+		v.remove(4);
+		System.out.println(" Size of family..."+v.size());
+		System.out.println(" The Members in the family after some changes are..."+v);
+		
+
+	}
+
+}
+
+Output:
+---------
+
+ Size of family...5
+ The Members in the first family are...[ Chary ,  yochi ,  ktr ,  kcr ,  cbn ]
+ Size of family...6
+ The Members in the family after one generation are...[BalaKrishna,  Chary ,  yochi ,  ktr ,  kcr ,  cbn ]
+ Size of family...5
+ The Members in the family after some changes are...[BalaKrishna,  Chary ,  yochi ,  ktr ,  cbn ]
+
+				
+2: Set:
+-------
+	a: HashSet:
+		1: HashSet doesn’t maintain any order, the elements would be returned in any random order.
+		2: HashSet doesn’t allow duplicates. If you try to add a duplicate element in HashSet, the old value would be overwritten.
+		3: HashSet allows null values however if you insert more than one nulls it would still return only one null value.
+
+Sample:
+---------
+
+package pack;
+
+import java.util.HashSet;
+
+public class HashSetExample
+{
+
+	public static void main(String[] args) 
+	{
+
+		HashSet<String> hs=new HashSet<>();
+		hs.add(" Andhra");
+		hs.add(" Telangana");
+		hs.add(" Karnataka");
+		hs.add(" Chennai");
+		hs.add(" Kerala");
+		hs.add(" Goa");
+		hs.add(" Chennai");
+		System.out.println(" Data in the HashSet are..."+hs);
+		hs.add(" null ");
+		hs.add(" null ");
+		System.out.println(" Data in the HashSet are..."+hs);
+		
+	}
+
+}
+
+Output:
+---------
+
+ Data in the HashSet are...[ Goa,  Karnataka,  Kerala,  Chennai,  Telangana,  Andhra]
+ Data in the HashSet are...[ Goa,  null ,  Karnataka,  Kerala,  Chennai,  Telangana,  Andhra]
+
+
+b: LinkedHashSet
+		1: LinkedHashSet maintains the insertion order. 
+		2: Elements gets sorted in the same sequence in which they have been added to the Set.
+Sample:
+---------
+
+package pack;
+
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample 
+{
+
+	public static void main(String[] args) 
+	{
+
+		LinkedHashSet<String> lsh=new LinkedHashSet<>();
+		lsh.add(" B ");
+		lsh.add(" A ");
+		lsh.add(" B ");
+		lsh.add(" Y ");
+		lsh.add(" E ");
+		lsh.add(" G ");
+		System.out.println(" Size..."+lsh.size());
+		System.out.println(" Data in the Linked Hashed Set are..."+lsh);
+		lsh.add(" SIA ");
+		System.out.println(" Size..."+lsh.size());
+		System.out.println(" Data in the Linked Hashed Set are..."+lsh);
+		LinkedHashSet<Integer> lhs=new LinkedHashSet<>();
+		lhs.add(330);
+		lhs.add(044);
+		lhs.add(541);
+		lhs.add(330);
+		System.out.println(" Size..."+lhs.size());
+		System.out.println(" Data in the Linked Hashed Set are..."+lhs);
+		
+		
+		
+
+	}
+
+}
+
+Output:
+--------
+
+ Size...5
+ Data in the Linked Hashed Set are...[ B ,  A ,  Y ,  E ,  G ]
+ Size...6
+ Data in the Linked Hashed Set are...[ B ,  A ,  Y ,  E ,  G ,  SIA ]
+ Size...3
+ Data in the Linked Hashed Set are...[330, 36, 541]
+
+c: TreeSet
+------------
+
+	1: TreeSet is similar to HashSet except that it sorts the elements in the ascending order where as HashSet doesn’t maintain any order.
+Sample:
+---------
+
+package pack;
+
+import java.util.TreeSet;
+
+public class TreeSetExample 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		TreeSet<String> ts=new TreeSet<>();
+		ts.add(" Chicken ");
+		ts.add(" Mutton ");
+		ts.add(" Pork ");
+		ts.add(" Ham ");
+		ts.add(" Steak ");
+		ts.add(" Chicken ");
+		System.out.println(ts);
+		TreeSet<Integer> ts1=new TreeSet<>();
+		ts1.add(19);
+		ts1.add(82);
+		ts1.add(37);
+		ts1.add(37);
+		ts1.add(64);
+		ts1.add(55);
+		System.out.println(ts1);
+		
+
+	}
+
+}
+
+Output:
+---------
+
+[ Chicken ,  Ham ,  Mutton ,  Pork ,  Steak ]
+[19, 37, 55, 64, 82]
+
+3: Map
+--------				
+
+a: HashMap:
+		1: HashMap maintains key and value pairs and often denoted as HashMap<Key, Value>  // Example < Integer, String> if u want to data like ( 1, yochi) .
+
+Sample:
+---------
+
+package pack;
+
+import java.util.HashMap;
+
+public class HashMapExample 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		HashMap<Integer,String> hm=new HashMap<>();
+		hm.put(1, "Yochitha");
+		hm.put(3, "Soumya");
+		hm.put(2, "Saibersys");
+		hm.put(4, "Frisco");
+		hm.put(1, "Yochi");
+		System.out.println(hm);
+		hm.remove(2);
+		System.out.println(hm);	
+
+	}
+
+}
+
+Output:
+---------
+
+{1=Yochi, 2=Saibersys, 3=Soumya, 4=Frisco}
+{1=Yochi, 3=Soumya, 4=Frisco}			

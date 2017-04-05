@@ -1,0 +1,133 @@
+Ashok C Bitra							Selenium QA Testing
+Mahesh : Tutor							        Saibersys
+
+UFT(Unified Fuctional Testing):
+-------------------------------------
+
+	1: UFT is used for testing the Window Based Applications and Websites, mostly used for testing the Window_Based_Apps.
+	
+	2: UFT is designed by the HP.
+	
+	3: UFT uses the VB(Visual Base Script) Language.
+
+	4: UFT is an Advanced_Version of QTP(Quick_Test_Programming).
+	
+	5: QTP is designed by the Mercury.
+
+Major Differences between the Selenium and UFT are:
+
+		Selenium 							UFT
+		----------							-----
+
+	1: Used to test the Websites.					1: Used to test the Websites as well as Window_Based_Applications.
+								    (Apps that we install in our Computer are Window_Based_Apps)
+
+	2: Through the WebElements we find the Property values.		2: We Find the Objects By Recording.
+
+	3: Support multiple languages( such as Java,Ruby,C#..,)		3: Supports VB Language.
+	
+	4: Supports mutliple browsers(Firefox,Chrome,IE ..,)			4: Support Firefox and IE(Internet Explorer).
+
+Checking How the UFT Works:
+-------------------------------------
+
+	1: Click on the "Star" Button the Left_Corner of the Tool and Create a "New_GUI_Test".
+	
+	2: Provide the Project Name and Click on the Record Button and perform the testing that we need to complete and after complete the task "Stop_Record" by clickin on the "Stop_Icon" 	    that on the Pop_Up_Window that we get when we hit on the Record Button.
+
+	3: The Main Advantge is the VB Script will be Completed Automatically by the recording( Which Gets the Objects By Recording).
+
+
+Handling Facebook_Login_Logout Via Cucumber:
+------------------------------------------------------------
+
+File.feature 
+-------------
+
+@tag1
+Feature: My First Project in Cucumber
+
+  Scenario: i want to perform testing on Facebook Login_Logout
+    Given i am member of Facebook Family
+    When Ashok enter the Username
+    And Ashok enter the Password
+    Then Ashok should enter the Facebook account
+    But Ashok FB HomePageshould not be closed
+
+Final.java :
+-------------
+
+package firstCucu.feature;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Final 
+{
+	WebDriver d;
+	@Given("^i am member of Facebook Family$")
+	public void i_am_member_of_Facebook_Family() throws Throwable 
+	{
+	    d=new FirefoxDriver();
+	    Thread.sleep(5000);
+	    d.get("http://www.facebook.com");
+	    Thread.sleep(5000);
+	    
+	}
+
+	@When("^Ashok enter the Username$")
+	public void ashok_enter_the_Username() throws Throwable
+	{
+		d.findElement(By.id("email")).sendKeys("Bitra9999@gmail.com");
+		Thread.sleep(5000);
+	}
+
+	@When("^Ashok enter the Password$")
+	public void ashok_enter_the_Password() throws Throwable 
+	{
+		d.findElement(By.id("pass")).sendKeys("********");
+		Thread.sleep(5000);
+	}
+
+	@Then("^Ashok should enter the Facebook account$")
+	public void ashok_should_enter_the_Facebook_account() throws Throwable 
+	{
+		d.findElement(By.id("loginbutton")).click();
+		Thread.sleep(5000);
+	}
+
+	@Then("^Ashok FB HomePageshould not be closed$")
+	public void ashok_FB_HomePageshould_not_be_closed() throws Throwable 
+	{
+		d.close();
+	}
+
+
+
+}
+
+
+Output:
+--------
+
+@tag1
+Feature: My First Project in Cucumber
+
+  Scenario: i want to perform testing on Facebook Login_Logout # C:/Users/prash/Documents/New folder/MyCucumber/src/firstCucu/feature/File.feature:4
+    Given i am member of Facebook Family                       # Final.i_am_member_of_Facebook_Family()
+    When Ashok enter the Username                              # Final.ashok_enter_the_Username()
+    And Ashok enter the Password                               # Final.ashok_enter_the_Password()
+    Then Ashok should enter the Facebook account               # Final.ashok_should_enter_the_Facebook_account()
+    But Ashok FB HomePageshould not be closed                  # Final.ashok_FB_HomePageshould_not_be_closed()
+
+1 Scenarios (1 passed)
+5 Steps (5 passed)
+0m43.383s
+
+
+				

@@ -1,0 +1,208 @@
+Ashok C Bitra						Selenium QA Testing
+Mahesh : Tutor						          Sybersys
+Test Driven Automation_Framework:
+-------------------------------------------
+When its comes to Automation Frameworks, there are generally 2 main concepts 
+
+1. JUnit 
+2. TestNg
+
+TestNg(Test Next Generation): TestNg is very powerful than JUnit, it doesn't uses the main in the script.
+	1: We can run paralell testcases with the help of these TestNg.
+	2: These Automation frameworks are done by using the Testcases.
+	3: Testcases are run by the functions with the help of Annatations.
+
+Syntax: 
+	1: @Test
+	2: @Test(Priority=<value>) : Used to run the testcases according to the required priority based on the priority values.
+	3: @Test(enabled=false) : To the running of a TestCase.
+	4: @BeforeMethod : To run the TestCase in advance.
+	5: @AfterMethod : To  run the TestCase at the end.
+
+Example 1:
+-------------
+
+package example;
+
+import org.testng.annotations.Test;
+
+public class Framework 
+{
+	@Test(priority=1)
+	public void Login()
+	{
+		System.out.println("Login in to bank ........");
+	}
+	@Test(priority=2)
+	public void Withdraw()
+	{
+		
+		System.out.println("Withdraw from the bank ........");
+	}
+	@Test(priority=3)
+	public void Deposit()
+	{
+		System.out.println("Deposit in to bank ........");
+	}
+	@Test(priority=4)
+	public void Logout()
+	{
+		System.out.println("Logout from the bank ........");
+		
+	}
+}
+
+Output:
+
+Login in to bank ........
+Withdraw from the bank ........
+Deposit in to bank ........
+Logout from the bank ........
+PASSED: Login
+PASSED: Withdraw
+PASSED: Deposit
+PASSED: Logout
+
+===============================================
+    Default test
+    Tests run: 4, Failures: 0, Skips: 0
+
+
+Example 2:
+-------------
+
+package example;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Framework 
+{
+	@BeforeMethod
+	public void Login()
+	{
+		System.out.println("Login in to bank ........");
+	}
+	@Test(enabled=false)
+	public void Withdraw()
+	{
+		
+		System.out.println("Withdraw from the bank ........");
+	}
+	@Test(priority=3)
+	public void Deposit()
+	{
+		System.out.println("Deposit in to bank ........");
+	}
+	@AfterMethod
+	public void Logout()
+	{
+		System.out.println("Logout from the bank ........");
+		
+	}
+}
+
+
+Output:
+
+Login in to bank ........
+Deposit in to bank ........
+Logout from the bank ........
+PASSED: Deposit
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+Example 3:
+-------------
+
+package example;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Basic 
+{
+	@BeforeMethod
+	public void Login()
+	{
+		System.out.println("Login in to bank ........");
+	}
+	@Test(priority=1)
+	public void Withdraw()
+	{
+		
+		System.out.println("Withdraw from the bank ........");
+	}
+	@Test(priority=2)
+	public void Deposit()
+	{
+		System.out.println("Deposit in to bank ........");
+	}
+	@AfterMethod
+	public void Logout()
+	{
+		System.out.println("Logout from the bank ........");
+		
+	}
+
+}
+
+
+
+Output:
+--------
+
+Login in to bank ........
+Withdraw from the bank ........
+Logout from the bank ........
+Login in to bank ........
+Deposit in to bank ........
+Logout from the bank ........
+PASSED: Withdraw
+PASSED: Deposit
+
+Passing values from One TestCase to another TestCase:
+-----------------------------------------------------------------
+
+Example:
+
+package example;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class PassingArrays 
+{
+	@Test(dataProvider="my values")
+	public void Sum(String x,String y)
+	{
+	int z=Integer.parseInt(x)+Integer.parseInt(y);
+	System.out.println("sum of two values is"+z);
+	
+	}
+	@DataProvider(name="my values")
+	public String[][] Content()
+	{
+		int a=10;
+		int b=20;
+		String[][] s=new String[1][2];
+		s[0][0]=Integer.toString(a);
+		s[0][1]=Integer.toString(b);
+		return s;
+		
+		
+	}
+}
+
+
+
+
+
+
+
+

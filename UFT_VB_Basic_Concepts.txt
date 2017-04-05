@@ -1,0 +1,167 @@
+Ashok C Bitra 							Selenium QA Testing
+Mahesh : Tutor							        Saibersys
+
+UFT_VB(Unified_Fuctional_Testing Visual_Basic Script):
+--------------------------------------------------------------------
+
+Basic Syntaxes in VB:
+-------------------------
+
+Variables:
+	
+	1: The Keyword used to declare to variables is "Dim".
+
+	2: By Default the variables will be read as "String" .
+	
+	3: General systanxes for converting the variables to required Formats
+
+		Cint : Converting any variants to "Integers type".
+		Clng : Converting any variants to "Long type".
+		Cstr: Converting any variants to "String type".
+		Cdbl: Converting any variants to "Double type".
+		Csng: Converting any variants to "Single Type".
+
+	4: Keyword to print the output is " Msgbox".
+
+	5: Keyword to enter the input at console is "Inputbox".
+	
+Basic_Programs_TypeConversations:
+-------------------------------------------
+
+Sample:
+---------
+
+	Dim a,b,c
+	a=10
+	b=20						//  Adding two numbers but we need to convert the numbers into integers.
+	c=Cint(a)+Cint(b)
+	Msgbox(" The Addition Value is ...."&c)
+
+Sample:
+---------
+
+	Dim a,b,c
+	a="mahesh indian recruiter"
+	b="tutor of testing"
+	c=Cstr(a)+Cstr(b)					// Adding two String Variables but we need to convert the variables into String type.
+	Msgbox("... Basic Info ..."&c)
+
+Sample:
+---------
+
+	Dim a,b,c
+	a=Inputbox("Enter the value1")
+	b=Inputbox("Enter the value2")				// Giving the Input_Data at the Time of Execution at Console ( Keyword used "Inputbox").
+	c=Cdbl(a)+Cdbl(b)
+	Msgbox("... Basic Info ..."&c)
+
+Control_Statements:
+------------------------
+
+	There will be Generally 3 types of Control statements, they are
+		1: Conditional Statements
+			
+			IF , IF ELSE and ELSE IF Ladder
+
+		2: Unconditional Statements
+ 
+		3: Loop Statements
+
+			FOR , WHILE , DO WHILE , SWITCH 
+
+Sample:
+---------
+
+	Dim a
+	a=Inputbox(" Enter the value of a ")
+	If a=1 Then
+	Msgbox(" SELENIUM QA TESTING ")
+	ElseIf a=2 Then
+	Msgbox(" SAIBERSYS ")      				// Using Conditional Control Statements 
+	ElseIf a=3 Then
+	Msgbox(" MAHESH : TUTOR ")
+	ElseIf a=4 Then
+	Msgbox(" ASHOK C BITRA")
+	
+	End If
+
+Sample:
+---------
+
+	Dim a
+	For Iterator = 1 To 5 Step 1
+	If a=1 Then
+		Msgbox(" POWERFUL POP SINGERS")
+		wait(5)
+	ElseIf a=1 Then
+		Msgbox(" Enrique Iglesias")
+		wait(5) // Provides the Concept of Synchronization through which we control the Execution Speed of our Task.(Same as "Thread.sleep(milliseconds)" in java)
+	ElseIf a=1 Then
+		Msgbox(" Jay Z")
+		wait(5)
+	ElseIf a=1 Then
+		Msgbox(" Wiz Khalifa")
+		wait(5)
+	ElseIf a=1 Then
+		Msgbox(" 50 Cent")
+		wait(5)
+		
+	End If
+	
+	Next
+Sample:
+---------
+
+	Dim a
+	For Iterator = 1 To 5 Step 1
+	Msgbox("Welcome to the world of Saibersys")
+	Next
+
+Sample:
+---------
+
+	Dim val
+	val=Inputbox(" Enter the Value ")
+	Select Case val
+	Case 1:
+			Msgbox(" Integer")
+			
+	Case 2:
+			Msgbox(" Float ")
+			
+	Case 3:
+			Msgbox(" Double ")
+			
+	Case 4:
+			Msgbox(" String ")
+			
+	Case 5:
+			Msgbox(" HexaDecimal ")
+			
+			
+	End Select 
+
+
+Synchronization:
+--------------------
+
+	Synchronization is mainly used to Delay the Execution Speed of our actions that we perform on the forms.
+
+	Syntax:
+		wait(seconds) // wait(5)
+
+Sample:
+---------
+
+	Dialog("Login").WinEdit("Agent Name:").Set "prashanth" 
+	wait(5)
+	Dialog("Login").WinEdit("Password:").SetSecure "584b2984575a6f9edbf3fc3b5cf4a0ff445a2c73" 
+	wait(5)
+	Dialog("Login").WinButton("OK").Click 
+	wait(5)
+	Window("Flight Reservation").Close
+	
+
+
+
+	

@@ -1,0 +1,91 @@
+Ashok C Bitra
+Phone No: 330-541-0441
+Assignment : Selenium Testing      		                "Sybersys"
+						----------
+
+Testing the basic functionalities:
+----------------------------------
+webdriver methods:
+------------------
+1: WebDriver: WebDriver is used to open the required browser like firefox, chrome, internet explorer etc..,
+syntax: WebDriver f= new FirefoxDriver();
+
+2: get(); : get() is used to open the url like gmail.com , facebook.com etc..,
+syntax: f.get("http://www.gmail.com");
+
+3: findElement: findElement is used to access the text fields in an webpage that we want to open.
+syntax:  f.findElement(By.Id("email")).sendKeys("bitra9999@gmail.com");
+
+4: close(); : close() is used to close the browser that we opened by WebDriver() .
+syntax: f.close();
+
+5: By.Id: Entering the property id's for the required text fields.
+6: click(); : Used to click the fields or buttons on a webpage
+7: sendKeys(); : Used to pass the values for the text fields.
+8: Navigate.to();
+9: Navigate.forward();
+10: Navigate.back(); All these navigate methods are used to navigate the page from one page to another page depending on the method that we used.
+		    for example: from browser to url page by using the Navigate.to();
+
+
+SAMPLE SYNTAXES:
+---------------
+		WebDriver f=new FirefoxDriver();
+		f.get("http://www.facebook.com");
+		f.findElement(By.id("email")).sendKeys("bitra9999@gmail.com");
+		f.findElement(By.id("pass")).sendKeys("*******");
+		f.findElement(By.id("loginbutton")).click();
+COMPLETE ASSIGNMENT:
+--------------------
+package sample;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Testing1 
+{
+
+	public static void main(String[] args)
+	{
+		//WebDriver used to open the Browser FIREFOX
+		WebDriver f=new FirefoxDriver();
+		//get is used to oen the url FACEBOOK.COM
+		f.get("http://www.facebook.com");
+		//findElement is used to access the required text fields, By.Id uses the id values of the text fields and sendKeys 
+		is used to pass the values.
+		f.findElement(By.id("email")).sendKeys("bitra9999@gmail.com");
+		f.findElement(By.id("pass")).sendKeys("*******");
+		//click is used to click on the buttons or fields that we want to access
+		f.findElement(By.id("loginbutton")).click();
+		}
+
+}
+
+Another Example: Using the sleep() and close() :
+----------------------------------------------------------------
+package sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Example 
+{
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		WebDriver f=new FirefoxDriver();
+		Thread.sleep(1000);
+		f.get("http://wwww.facebook.com");
+		Thread.sleep(1000);
+		f.findElement(By.id("email")).sendKeys("bitra9999@gmail.com");
+		Thread.sleep(1000);
+		f.findElement(By.id("pass")).sendKeys("suji1111");
+		Thread.sleep(1000);
+		f.findElement(By.id("u_0_n")).click();
+		Thread.sleep(1000);
+		f.close();
+		
+		}
+
+}
